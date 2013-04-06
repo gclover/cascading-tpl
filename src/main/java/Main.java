@@ -11,11 +11,10 @@ import cascading.tap.local.FileTap;
 import cascading.tuple.Fields;
 
 
-public class Main
-	{
+public class Main {
 		
-	public static void main(String[] argv) 
-		{
+	public static void main(String[] argv) {
+		
 		Tap empTap = new FileTap(new TextLine(new Fields("empid")), "data/employee.txt");
 		Tap salesTap = new FileTap(new TextLine(new Fields("custid")), "data/salesfact.txt");
 
@@ -36,5 +35,5 @@ public class Main
 		Flow flow = connector.connect(flowDef);
 		flow.complete();
 
-		}
 	}
+}
